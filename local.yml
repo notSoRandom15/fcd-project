@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 volumes:
   fcp_local_postgres_data: {}
@@ -21,7 +21,7 @@ services:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
     ports:
-      - '8000:8000'
+      - "8000:8000"
     command: /start
 
   postgres:
@@ -35,22 +35,6 @@ services:
       - fcp_local_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
-
-  docs:
-    image: fcp_local_docs
-    container_name: fcp_local_docs
-    build:
-      context: .
-      dockerfile: ./compose/local/docs/Dockerfile
-    env_file:
-      - ./.envs/.local/.django
-    volumes:
-      - ./docs:/docs:z
-      - ./config:/app/config:z
-      - ./fcp:/app/fcp:z
-    ports:
-      - '9000:9000'
-    command: /start-docs
 
   mailpit:
     image: axllent/mailpit:v1.8
@@ -89,5 +73,5 @@ services:
     image: fcp_local_flower
     container_name: fcp_local_flower
     ports:
-      - '5555:5555'
+      - "5555:5555"
     command: /start-flower
