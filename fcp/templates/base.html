@@ -31,8 +31,8 @@
     {% endblock css %}
     <!-- Le javascript
     ================================================== -->
-    {# Placed at the top of the document so pages load faster with defer #} {%
-    block javascript %}
+    {# Placed at the top of the document so pages load faster with defer #} 
+    {% block javascript %}
 
     <!-- Bootstrap JS -->
     <script
@@ -76,7 +76,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'billing' %}">Billing</a>
+                <a class="nav-link" href="{% url 'billing:home' %}">Billing</a>
               </li>
               {% if request.user.is_authenticated %}
               <li class="nav-item">
@@ -136,8 +136,8 @@
       {% endblock content %}
     </div>
     <!-- /container -->
-    {% block modal %} {% endblock modal %} {% block inline_javascript %} {%
-    comment %} Script tags with only code, no src (defer by default). To run
+    {% block modal %} {% endblock modal %} {% block inline_javascript %} 
+    {% comment %} Script tags with only code, no src (defer by default). To run
     with a "defer" so that you run inline code:
     <script>
       window.addEventListener("DOMContentLoaded", () => {
