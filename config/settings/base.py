@@ -79,6 +79,21 @@ THIRD_PARTY_APPS = [
     "django_celery_beat",
     'oauth2_provider',
     'rest_framework',
+
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+
+    'modelcluster',
+    'taggit',
 ]
 
 LOCAL_APPS = [
@@ -140,6 +155,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+
 ]
 
 # STATIC
@@ -331,3 +348,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
 }
+
+#wegtail
+WAGTAIL_SITE_NAME = 'community.dserver.uk'
+WAGTAILADMIN_BASE_URL = 'http://example.com'
