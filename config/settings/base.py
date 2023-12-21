@@ -100,6 +100,7 @@ LOCAL_APPS = [
     "fcp.users",
     # Your stuff: custom apps go here
     'fcp.billing',
+    'fcp.polls',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

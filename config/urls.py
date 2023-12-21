@@ -22,9 +22,11 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     path("billing/", include("fcp.billing.urls", namespace="billing")),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path("polls/", include('fcp.polls.urls', namespace="polls")),
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
     path('pages/', include(wagtail_urls)),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
