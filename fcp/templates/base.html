@@ -78,6 +78,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'billing:home' %}">Billing</a>
               </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="{% url 'polls:index' %}"
+                  >{% translate "polls" %}</a
+                >
+              </li>
               {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a
