@@ -76,6 +76,10 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    # social providers
+    "allauth.socialaccount.providers.github", 
+    "allauth.socialaccount.providers.twitter",
+    
     "django_celery_beat",
     'oauth2_provider',
     'rest_framework',
@@ -123,6 +127,9 @@ AUTH_USER_MODEL = "users.User"
 LOGIN_REDIRECT_URL = "users:redirect"
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 LOGIN_URL = "account_login"
+
+
+ACCOUNT_LOGOUT_ON_GET = True # directly logs the user out when the logout button is clicked via a GET request. This skips the confirm logout page.
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
@@ -321,7 +328,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "none"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_ADAPTER = "fcp.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/forms.html
