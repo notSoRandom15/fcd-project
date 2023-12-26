@@ -12,5 +12,15 @@
 <p>this is the homepage and it will be used for home</p>
 
 
-<h1>checking home page...</h1>
+<h1>checking Social authentication...</h1>
+<div class="container" style="text-align: center; padding-top: 10%;">
+    {% if user.is_authenticated %}
+        <h3>Welcome {{ user.email }}</h3>
+    
+        
+        
+    {% endif %}
+
+</div>
+
 {% endblock content %}
